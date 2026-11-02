@@ -2,8 +2,8 @@
 
 ### Developed with
 
-- Deno
-- Hono
+- Deno runtime
+- Hono framework
 - SQLite
 
 <br />
