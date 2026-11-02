@@ -7,10 +7,10 @@ export function checkUserStatusInChat(
   chatId: number,
 ): UserStatus {
   const chatUserRow = db.sql<ChatUser>`
-        SELECT * FROM ChatUser
-        WHERE userId = ${userId}
-        AND chatId = ${chatId} 
-    `;
+    SELECT * FROM ChatUser
+    WHERE userId = ${userId}
+    AND chatId = ${chatId} 
+  `;
 
   if (chatUserRow.length == 0) {
     return UserStatus.notInChat;

@@ -107,12 +107,12 @@ chatMessagesRouter.delete("/:messageId", (ctx) => {
   }
 
   const affectedRows = db.sql<Message>`
-      DELETE FROM Messages
-      WHERE id = ${messageId}
-      AND chatId = ${chatId}
-      AND senderId = ${jwtPayload.userId}
-      RETURNING *;
-    `;
+    DELETE FROM Messages
+    WHERE id = ${messageId}
+    AND chatId = ${chatId}
+    AND senderId = ${jwtPayload.userId}
+    RETURNING *;
+  `;
 
   if (affectedRows.length == 0) {
     return ctx.text(errorMessages.notFound, 404);

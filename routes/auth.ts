@@ -23,7 +23,7 @@ authRouter.post(
         (username, password)
         VALUES (${body.username}, ${passwordHash})
         RETURNING *;
-    `;
+      `;
     } catch (_error) {
       return ctx.text(errorMessages.usernameExists, 400);
     }
